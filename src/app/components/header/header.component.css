@@ -1,0 +1,31 @@
+
+.header {
+    display: flex;
+    flex-direction: column;
+    background-color: dodgerblue;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita el scroll horizontal */
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.banner-section app-banner {
+    width: 100vw;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0; /* Elimina cualquier margen que pueda causar el espacio en blanco */
+    padding: 0; /* Elimina cualquier relleno que pueda causar el espacio en blanco */
+}
+/* Asegura que el cuerpo no tenga un scroll horizontal */
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita el scroll horizontal en toda la página */
+}

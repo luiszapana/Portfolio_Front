@@ -1,0 +1,77 @@
+.row{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(240, 239, 239);
+
+}
+.contenedor {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten dentro del contenedor */
+    justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    gap: 1rem; /* Espacio entre elementos */
+}
+
+.text-container {
+    flex: 1 1 100%;
+    margin-right: 20px; /* Espacio entre el texto y la imagen */
+}
+
+.img-proyect {
+    max-width: 100%; /* Asegura que la imagen no exceda el contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    box-shadow: 10px 10px 10px black;
+}
+
+.parte1 {
+    font-size: 1.5rem;
+}
+
+.image-container {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 576px) {
+    .text-container {
+        flex: 1 1 70%;
+    }
+
+    .image-container {
+        flex: 1 1 30%;
+    }
+}
+
+@media (min-width: 768px) {
+    .text-container {
+        flex: 1 1 60%;
+    }
+
+    .image-container {
+        flex: 1 1 40%;
+    }
+}
+
+@media (min-width: 992px) {
+    .text-container {
+        flex: 1 1 50%;
+    }
+
+    .image-container {
+        flex: 1 1 50%;
+    }
+}
+
+@media (max-width: 575px) {
+    .image-container {
+        width: 100%;
+    }
+
+    .img-proyect {
+        width: 100%;
+        height: auto;
+    }
+}

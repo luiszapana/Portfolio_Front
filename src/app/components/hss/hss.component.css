@@ -1,0 +1,7 @@
+.row{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    padding: 20px;
+}

@@ -1,0 +1,46 @@
+img{
+    width: 50px;
+}
+a{
+    margin-right: 2px;
+}
+button{
+    margin-left: 2px;
+    padding-left: 22px;
+    padding-right: 22px;
+}
+
+.social-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.social-container a,
+.social-container button {
+    margin: 5px;
+}
+
+/* CSS para móviles */
+@media (max-width: 576px) {
+    /* Mantén LinkedIn, Facebook y GitHub en su lugar */
+    .social-container a:nth-child(1),
+    .social-container a:nth-child(2),
+    .social-container a:nth-child(3) {
+        flex-basis: auto;
+        display: inline-block;
+    }
+
+    /* Mueve Instagram y Twitter a una segunda línea */
+    .social-container a:nth-child(4),
+    .social-container a:nth-child(5) {
+        flex-basis: auto;
+        display: inline-block;
+    }
+
+    /* Mueve el botón de Login a una tercera línea */
+    .social-container button {
+        flex-basis: 100%; /* Ocupa toda la línea */
+        text-align: center; /* Centra el contenido */
+    }
+}

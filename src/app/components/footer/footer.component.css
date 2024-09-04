@@ -1,0 +1,14 @@
+.row{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: black;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+footer{
+    color: #fefefe;
+}
