@@ -50,7 +50,7 @@ p {
     align-items: center;
 }
 
-.profile-picture {
+#profile-picture {
     border-radius: 50%;
     box-shadow: 3px 3px 3px grey;
     max-width: 100%;

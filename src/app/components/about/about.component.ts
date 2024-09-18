@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { person } from '../../model/person.model';
+import { Person } from '../../model/person.model';
 import { PersonService } from '../../service/person.service';
+import { TokenService } from '../../service/token.service';
 
 @Component({
   selector: 'app-about',
@@ -9,13 +10,22 @@ import { PersonService } from '../../service/person.service';
 })
 export class AboutComponent implements OnInit{
 
-  person: person = new person("defaultName", "defaultLastName", "defaultImageUrl");
+  person: Person = new Person("defaultName", "defaultLastName", "defaultDescription", "");
   
-  constructor(public personService: PersonService){}
+  constructor(public personService: PersonService, private tokenService: TokenService){}
+
+  isLogged = false;
 
   ngOnInit(): void {
-    this.personService.getPerson().subscribe(data => {
-      this.person = data;
-    });    
+    this.loadPerson();
+    if (this.tokenService.getToken()){
+      this.isLogged = true;
+    }
+  }
+
+  loadPerson(){
+    this.personService.detail(1).subscribe(
+      data => {this.person = data}
+    )
   }
 }

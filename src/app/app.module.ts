@@ -24,6 +24,15 @@ import { EditExperienceComponent } from './components/experience/edit-experience
 import { RouterModule } from '@angular/router';
 import { NewEducationComponent } from './components/education/new-education.component';
 import { EditEducationComponent } from './components/education/edit-education.component';
+import { EditSkillComponent } from './components/hss/edit-skill.component';
+import { NewSkillComponent } from './components/hss/new-skill.component';
+import { EditAboutComponent } from './components/about/edit-about.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getStorage, provideStorage } from '@angular/fire/storage'; // Si usas Cloud Storage
+
 
 @NgModule({
   declarations: [
@@ -43,7 +52,10 @@ import { EditEducationComponent } from './components/education/edit-education.co
     NewExperienceComponent,
     EditExperienceComponent,
     NewEducationComponent,
-    EditEducationComponent
+    EditEducationComponent,
+    EditSkillComponent,
+    NewSkillComponent,
+    EditAboutComponent
   ],
   imports: [
     BrowserModule,
@@ -51,12 +63,23 @@ import { EditEducationComponent } from './components/education/edit-education.co
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule
   ],
   providers: [
     provideClientHydration(),
     provideHttpClient(withFetch()),
-    interceptorProvider
+    interceptorProvider,
+    provideFirebaseApp(() => initializeApp({
+      "projectId":"portfolio-laz",
+      "appId":"1:112707309692:web:fd13dd7ad9fc2c7630f9f9",
+      "storageBucket":"portfolio-laz.appspot.com",
+      "apiKey":"AIzaSyCR2YfJR7PPqiek2bs3ojezsVY3OqoECmU",
+      "authDomain":"portfolio-laz.firebaseapp.com",
+      "messagingSenderId":"112707309692"
+    })),
+    provideStorage(() => getStorage())
   ],
   bootstrap: [AppComponent]
 })

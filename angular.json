@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Portfolio_Front": {
+    "portfolio-front": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -76,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Portfolio_Front:build:production"
+              "buildTarget": "portfolio-front:build:production"
             },
             "development": {
-              "buildTarget": "Portfolio_Front:build:development"
+              "buildTarget": "portfolio-front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "Portfolio_Front:build"
+            "buildTarget": "portfolio-front:build"
           }
         },
         "test": {
